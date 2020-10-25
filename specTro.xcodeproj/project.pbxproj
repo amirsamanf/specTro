@@ -3,27 +3,43 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F136A93DE83E9860B9A69CE /* Pods_specTro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE9EFC77BB02D6946FDE977 /* Pods_specTro.framework */; };
 		F2E6657F25429F65001E49DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E6657E25429F65001E49DB /* AppDelegate.swift */; };
 		F2E6658125429F65001E49DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E6658025429F65001E49DB /* SceneDelegate.swift */; };
-		F2E6658325429F65001E49DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E6658225429F65001E49DB /* ViewController.swift */; };
+		F2E6658325429F65001E49DB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E6658225429F65001E49DB /* HomeViewController.swift */; };
 		F2E6658625429F65001E49DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6658425429F65001E49DB /* Main.storyboard */; };
 		F2E6658825429F68001E49DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2E6658725429F68001E49DB /* Assets.xcassets */; };
 		F2E6658B25429F68001E49DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6658925429F68001E49DB /* LaunchScreen.storyboard */; };
+		F2E665982542C018001E49DB /* Spectro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F2E665972542C011001E49DB /* Spectro.mp4 */; };
+		F2E6659C25435190001E49DB /* customButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E6659B25435190001E49DB /* customButton.swift */; };
+		F2E665A42544AD70001E49DB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E665A32544AD70001E49DB /* SettingsViewController.swift */; };
+		F2E665A82544B6F1001E49DB /* Settings.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F2E665A72544B6F1001E49DB /* Settings.mp4 */; };
+		F2E8972D254555C6000ADD82 /* Results.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F2E8972C254555C6000ADD82 /* Results.mp4 */; };
+		F2E89730254555FF000ADD82 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E8972F254555FF000ADD82 /* ResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B10E864E46B40339D4A6F5B /* Pods-specTro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-specTro.debug.xcconfig"; path = "Target Support Files/Pods-specTro/Pods-specTro.debug.xcconfig"; sourceTree = "<group>"; };
+		AFE9EFC77BB02D6946FDE977 /* Pods_specTro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_specTro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D376F8AC229DB0BDEEAFE000 /* Pods-specTro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-specTro.release.xcconfig"; path = "Target Support Files/Pods-specTro/Pods-specTro.release.xcconfig"; sourceTree = "<group>"; };
 		F2E6657B25429F65001E49DB /* specTro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = specTro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E6657E25429F65001E49DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2E6658025429F65001E49DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F2E6658225429F65001E49DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F2E6658225429F65001E49DB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F2E6658525429F65001E49DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F2E6658725429F68001E49DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2E6658A25429F68001E49DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2E6658C25429F68001E49DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2E665972542C011001E49DB /* Spectro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Spectro.mp4; path = "/Users/Saman/Documents/Xcode apps/specTro/specTro/Spectro.mp4"; sourceTree = "<absolute>"; };
+		F2E6659B25435190001E49DB /* customButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = customButton.swift; path = "/Users/Saman/Documents/Xcode apps/specTro/specTro/customButton.swift"; sourceTree = "<absolute>"; };
+		F2E665A32544AD70001E49DB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F2E665A72544B6F1001E49DB /* Settings.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Settings.mp4; sourceTree = "<group>"; };
+		F2E8972C254555C6000ADD82 /* Results.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Results.mp4; sourceTree = "<group>"; };
+		F2E8972F254555FF000ADD82 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F136A93DE83E9860B9A69CE /* Pods_specTro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FC3F34906622C3549C244CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B10E864E46B40339D4A6F5B /* Pods-specTro.debug.xcconfig */,
+				D376F8AC229DB0BDEEAFE000 /* Pods-specTro.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6C3EBC30959F4A36236A9352 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AFE9EFC77BB02D6946FDE977 /* Pods_specTro.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F2E6657225429F65001E49DB = {
 			isa = PBXGroup;
 			children = (
 				F2E6657D25429F65001E49DB /* specTro */,
 				F2E6657C25429F65001E49DB /* Products */,
+				3FC3F34906622C3549C244CD /* Pods */,
+				6C3EBC30959F4A36236A9352 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,11 +94,17 @@
 			children = (
 				F2E6657E25429F65001E49DB /* AppDelegate.swift */,
 				F2E6658025429F65001E49DB /* SceneDelegate.swift */,
-				F2E6658225429F65001E49DB /* ViewController.swift */,
+				F2E6658225429F65001E49DB /* HomeViewController.swift */,
+				F2E665A32544AD70001E49DB /* SettingsViewController.swift */,
+				F2E8972F254555FF000ADD82 /* ResultsViewController.swift */,
 				F2E6658425429F65001E49DB /* Main.storyboard */,
+				F2E6659B25435190001E49DB /* customButton.swift */,
 				F2E6658725429F68001E49DB /* Assets.xcassets */,
 				F2E6658925429F68001E49DB /* LaunchScreen.storyboard */,
 				F2E6658C25429F68001E49DB /* Info.plist */,
+				F2E8972C254555C6000ADD82 /* Results.mp4 */,
+				F2E665A72544B6F1001E49DB /* Settings.mp4 */,
+				F2E665972542C011001E49DB /* Spectro.mp4 */,
 			);
 			path = specTro;
 			sourceTree = "<group>";
@@ -74,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2E6658F25429F68001E49DB /* Build configuration list for PBXNativeTarget "specTro" */;
 			buildPhases = (
+				779E8C0224D814E95A7B028D /* [CP] Check Pods Manifest.lock */,
 				F2E6657725429F65001E49DB /* Sources */,
 				F2E6657825429F65001E49DB /* Frameworks */,
 				F2E6657925429F65001E49DB /* Resources */,
+				BD7266A89B90F133E2661F70 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,7 +168,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E8972D254555C6000ADD82 /* Results.mp4 in Resources */,
+				F2E665982542C018001E49DB /* Spectro.mp4 in Resources */,
 				F2E6658B25429F68001E49DB /* LaunchScreen.storyboard in Resources */,
+				F2E665A82544B6F1001E49DB /* Settings.mp4 in Resources */,
 				F2E6658825429F68001E49DB /* Assets.xcassets in Resources */,
 				F2E6658625429F65001E49DB /* Main.storyboard in Resources */,
 			);
@@ -132,14 +179,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		779E8C0224D814E95A7B028D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-specTro-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD7266A89B90F133E2661F70 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-specTro/Pods-specTro-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-specTro/Pods-specTro-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-specTro/Pods-specTro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F2E6657725429F65001E49DB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2E6658325429F65001E49DB /* ViewController.swift in Sources */,
+				F2E6659C25435190001E49DB /* customButton.swift in Sources */,
+				F2E6658325429F65001E49DB /* HomeViewController.swift in Sources */,
 				F2E6657F25429F65001E49DB /* AppDelegate.swift in Sources */,
+				F2E665A42544AD70001E49DB /* SettingsViewController.swift in Sources */,
 				F2E6658125429F65001E49DB /* SceneDelegate.swift in Sources */,
+				F2E89730254555FF000ADD82 /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +308,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +363,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -283,12 +375,14 @@
 		};
 		F2E6659025429F68001E49DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B10E864E46B40339D4A6F5B /* Pods-specTro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NQ2CJKS89R;
 				INFOPLIST_FILE = specTro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,12 +396,14 @@
 		};
 		F2E6659125429F68001E49DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D376F8AC229DB0BDEEAFE000 /* Pods-specTro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NQ2CJKS89R;
 				INFOPLIST_FILE = specTro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

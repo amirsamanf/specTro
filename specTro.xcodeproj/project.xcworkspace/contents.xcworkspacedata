@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/Saman/Documents/Xcode apps/specTro/specTro/customButton.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/Saman/Documents/Xcode apps/specTro/specTro/Spectro.mp4">
+   </FileRef>
+   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>
