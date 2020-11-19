@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2F136A93DE83E9860B9A69CE /* Pods_specTro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE9EFC77BB02D6946FDE977 /* Pods_specTro.framework */; };
+		F2C791A02561D88700808E11 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C7919F2561D88700808E11 /* MapViewController.swift */; };
+		F2C791A92561DF4A00808E11 /* Map.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F2C791A82561DF4A00808E11 /* Map.mp4 */; };
 		F2E6657F25429F65001E49DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E6657E25429F65001E49DB /* AppDelegate.swift */; };
 		F2E6658125429F65001E49DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E6658025429F65001E49DB /* SceneDelegate.swift */; };
 		F2E6658325429F65001E49DB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E6658225429F65001E49DB /* HomeViewController.swift */; };
@@ -26,6 +28,8 @@
 		6B10E864E46B40339D4A6F5B /* Pods-specTro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-specTro.debug.xcconfig"; path = "Target Support Files/Pods-specTro/Pods-specTro.debug.xcconfig"; sourceTree = "<group>"; };
 		AFE9EFC77BB02D6946FDE977 /* Pods_specTro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_specTro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D376F8AC229DB0BDEEAFE000 /* Pods-specTro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-specTro.release.xcconfig"; path = "Target Support Files/Pods-specTro/Pods-specTro.release.xcconfig"; sourceTree = "<group>"; };
+		F2C7919F2561D88700808E11 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		F2C791A82561DF4A00808E11 /* Map.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Map.mp4; sourceTree = "<group>"; };
 		F2E6657B25429F65001E49DB /* specTro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = specTro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E6657E25429F65001E49DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2E6658025429F65001E49DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,12 +101,14 @@
 				F2E6658225429F65001E49DB /* HomeViewController.swift */,
 				F2E665A32544AD70001E49DB /* SettingsViewController.swift */,
 				F2E8972F254555FF000ADD82 /* ResultsViewController.swift */,
+				F2C7919F2561D88700808E11 /* MapViewController.swift */,
 				F2E6658425429F65001E49DB /* Main.storyboard */,
 				F2E6659B25435190001E49DB /* customButton.swift */,
 				F2E6658725429F68001E49DB /* Assets.xcassets */,
 				F2E6658925429F68001E49DB /* LaunchScreen.storyboard */,
 				F2E6658C25429F68001E49DB /* Info.plist */,
 				F2E8972C254555C6000ADD82 /* Results.mp4 */,
+				F2C791A82561DF4A00808E11 /* Map.mp4 */,
 				F2E665A72544B6F1001E49DB /* Settings.mp4 */,
 				F2E665972542C011001E49DB /* Spectro.mp4 */,
 			);
@@ -169,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2E8972D254555C6000ADD82 /* Results.mp4 in Resources */,
+				F2C791A92561DF4A00808E11 /* Map.mp4 in Resources */,
 				F2E665982542C018001E49DB /* Spectro.mp4 in Resources */,
 				F2E6658B25429F68001E49DB /* LaunchScreen.storyboard in Resources */,
 				F2E665A82544B6F1001E49DB /* Settings.mp4 in Resources */,
@@ -232,6 +239,7 @@
 				F2E665A42544AD70001E49DB /* SettingsViewController.swift in Sources */,
 				F2E6658125429F65001E49DB /* SceneDelegate.swift in Sources */,
 				F2E89730254555FF000ADD82 /* ResultsViewController.swift in Sources */,
+				F2C791A02561D88700808E11 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

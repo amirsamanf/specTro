@@ -6,7 +6,9 @@
 //
 import UIKit
 
+let defaults = UserDefaults.standard
 var measurementDuration: Float = 5.0
+
 
 // Overloading string function
 extension String {
@@ -24,7 +26,13 @@ class SettingsViewController: HomeViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.delegate = self
-        textField.text = String(measurementDuration)
+        if defaults.string(forKey: "duration") == "0.0" {
+            textField.text = "5.0"
+        }
+        else {
+            textField.text = defaults.string(forKey: "duration")
+        }
+        
         initializeVideoPlayerWithVideo(viewName: "Settings")
         player?.play()
     }
@@ -37,15 +45,18 @@ class SettingsViewController: HomeViewController, UITextFieldDelegate {
             self.dismiss(animated: true, completion: {self.presentingViewController?.dismiss(animated: true, completion: nil)})
 
         }
-        else if (((textField.text)?.isNumber) == true) && (Float(textField.text!)! > 0.5) {
+        else if (((textField.text)?.isNumber) == true) && (Float(textField.text!)! >= 0.1) {
             let dur = Float(textField.text!)!
             measurementDuration = dur
             self.dismiss(animated: true, completion: {self.presentingViewController?.dismiss(animated: true, completion: nil)})
             // Tell Pi to update duration ("duration" is the topic)
-            mqttClient.publish("duration", withString: textField.text!)
+//            self.sendMessage(topic: "duration", message: textField.text!)
+            MQTTManager.shared.sendMessage(topic: "duration", message: textField.text!)
+            defaults.setValue(measurementDuration, forKey: "duration")
+
         }
         else {
-            let alert = UIAlertController(title: "Invalid duration", message: "Please enter a number greater than or equal to 0.5", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Invalid duration", message: "Please enter a number greater than or equal to 0.1", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             return

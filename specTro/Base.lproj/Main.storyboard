@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="specTro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggy-UL-nol">
-                                <rect key="frame" x="82.666666666666686" y="54" width="210" height="112"/>
+                                <rect key="frame" x="102" y="54" width="210" height="112"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="112" id="iuG-1v-QeR"/>
@@ -25,7 +25,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhI-5U-Itv" customClass="CustomButton" customModule="specTro" customModuleProvider="target">
-                                <rect key="frame" x="47.666666666666657" y="191" width="280" height="50"/>
+                                <rect key="frame" x="67" y="191" width="280" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="1zG-fS-AG2"/>
                                     <constraint firstAttribute="height" constant="50" id="YMZ-xe-gBV"/>
@@ -36,7 +36,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j84-FM-ysF" customClass="CustomButton" customModule="specTro" customModuleProvider="target">
-                                <rect key="frame" x="47.666666666666657" y="266" width="280" height="50"/>
+                                <rect key="frame" x="67" y="266" width="280" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="OSS-iW-xZs"/>
                                     <constraint firstAttribute="width" constant="280" id="PoZ-cF-BzK"/>
@@ -47,7 +47,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxM-BF-FyP" customClass="CustomButton" customModule="specTro" customModuleProvider="target">
-                                <rect key="frame" x="47.666666666666657" y="341" width="280" height="50"/>
+                                <rect key="frame" x="67" y="341" width="280" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="Abt-pw-8sO"/>
                                     <constraint firstAttribute="height" constant="50" id="Ro8-T3-Px3"/>
@@ -58,7 +58,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajq-ac-lu1" customClass="CustomButton" customModule="specTro" customModuleProvider="target">
-                                <rect key="frame" x="47.666666666666657" y="491" width="280" height="50"/>
+                                <rect key="frame" x="67" y="566" width="280" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="WAv-Ph-jYi"/>
                                     <constraint firstAttribute="height" constant="50" id="sQz-CU-UOq"/>
@@ -69,7 +69,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yK2-mH-68P" customClass="CustomButton" customModule="specTro" customModuleProvider="target">
-                                <rect key="frame" x="47.666666666666657" y="566" width="280" height="50"/>
+                                <rect key="frame" x="67" y="641" width="280" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="Ff9-jX-jom"/>
                                     <constraint firstAttribute="height" constant="50" id="shv-G5-oaB"/>
@@ -80,7 +80,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbH-nO-BEl" customClass="CustomButton" customModule="specTro" customModuleProvider="target">
-                                <rect key="frame" x="47.666666666666657" y="416" width="280" height="50"/>
+                                <rect key="frame" x="67" y="416" width="280" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="9il-Wf-CZh"/>
                                     <constraint firstAttribute="height" constant="50" id="Qdm-oJ-Ub5"/>
@@ -90,13 +90,24 @@
                                     <action selector="resultsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m2c-bp-SeE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPR-QS-UJV" customClass="CustomButton" customModule="specTro" customModuleProvider="target">
+                                <rect key="frame" x="67" y="491" width="280" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Sum-bA-mbE"/>
+                                    <constraint firstAttribute="width" constant="280" id="zE6-AU-emH"/>
+                                </constraints>
+                                <state key="normal" title="Map"/>
+                                <connections>
+                                    <action selector="mapButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J9I-Ab-6L8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.14585459232330322" green="0.22606959939002991" blue="0.30507522821426392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.16083922980000001" green="0.25731754299999998" blue="0.34466096759999998" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="yK2-mH-68P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5WB-h7-gZO"/>
-                            <constraint firstItem="Ajq-ac-lu1" firstAttribute="top" secondItem="mbH-nO-BEl" secondAttribute="bottom" constant="25" id="CIg-gM-LaB"/>
+                            <constraint firstItem="Ajq-ac-lu1" firstAttribute="top" secondItem="qPR-QS-UJV" secondAttribute="bottom" constant="25" id="8AB-GP-uiX"/>
                             <constraint firstItem="j84-FM-ysF" firstAttribute="top" secondItem="GhI-5U-Itv" secondAttribute="bottom" constant="25" id="Kaw-2p-aVL"/>
                             <constraint firstItem="GhI-5U-Itv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OJp-Ck-2lc"/>
                             <constraint firstItem="GhI-5U-Itv" firstAttribute="top" secondItem="ggy-UL-nol" secondAttribute="bottom" constant="25" id="WV3-Bl-B7K"/>
@@ -107,20 +118,23 @@
                             <constraint firstItem="ggy-UL-nol" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hTh-wx-QIK"/>
                             <constraint firstItem="mbH-nO-BEl" firstAttribute="top" secondItem="dxM-BF-FyP" secondAttribute="bottom" constant="25" id="nOE-f7-3cl"/>
                             <constraint firstItem="Ajq-ac-lu1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sbp-ZO-B6Y"/>
-                            <constraint firstItem="yK2-mH-68P" firstAttribute="top" secondItem="Ajq-ac-lu1" secondAttribute="bottom" constant="25" id="z8r-Ze-Zoh"/>
+                            <constraint firstItem="yK2-mH-68P" firstAttribute="top" secondItem="Ajq-ac-lu1" secondAttribute="bottom" constant="25" id="vxF-ui-PDk"/>
+                            <constraint firstItem="qPR-QS-UJV" firstAttribute="top" secondItem="mbH-nO-BEl" secondAttribute="bottom" constant="25" id="xK0-cC-TZC"/>
                             <constraint firstItem="dxM-BF-FyP" firstAttribute="top" secondItem="j84-FM-ysF" secondAttribute="bottom" constant="25" id="zIl-5V-8PC"/>
+                            <constraint firstItem="qPR-QS-UJV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zvv-zx-66t"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="connectButton" destination="dxM-BF-FyP" id="ynr-01-30j"/>
                         <outlet property="faqButton" destination="yK2-mH-68P" id="BMr-xS-xfe"/>
+                        <outlet property="mapButton" destination="qPR-QS-UJV" id="bxb-ff-qzT"/>
                         <outlet property="resultsButton" destination="mbH-nO-BEl" id="kTH-Ao-HLM"/>
                         <outlet property="settingsButton" destination="Ajq-ac-lu1" id="wCq-rj-LWK"/>
                         <outlet property="startButton" destination="GhI-5U-Itv" id="D2a-BY-umy"/>
                         <outlet property="stopButton" destination="j84-FM-ysF" id="eu8-bQ-6Gf"/>
                         <outlet property="videoViewContainer" destination="ggy-UL-nol" id="Agh-Ky-aGj"/>
                         <segue destination="XUE-K2-yPF" kind="showDetail" identifier="SettingsSegue" id="yaG-5t-aE8"/>
-                        <segue destination="YTX-Nr-lCf" kind="showDetail" identifier="ResultsSegue" id="wtx-L6-C3j"/>
+                        <segue destination="zUY-tk-3Xx" kind="show" identifier="MapSegue" id="AoA-dD-T9m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -132,11 +146,11 @@
             <objects>
                 <viewController storyboardIdentifier="ResultsViewController" id="YTX-Nr-lCf" customClass="ResultsViewController" customModule="specTro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gWy-xT-OtG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LlK-ua-FFz">
-                                <rect key="frame" x="82.666666666666686" y="10" width="210" height="112"/>
+                                <rect key="frame" x="102" y="10" width="210" height="112"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="112" id="eCQ-wU-I8P"/>
@@ -159,16 +173,63 @@
             </objects>
             <point key="canvasLocation" x="20" y="844"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="qmc-2e-SLy">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="zUY-tk-3Xx" customClass="MapViewController" customModule="specTro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pzL-Sf-gN2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEr-Ti-vwR">
+                                <rect key="frame" x="102" y="10" width="210" height="112"/>
+                                <color key="backgroundColor" red="0.14585459232330322" green="0.22606959939002991" blue="0.30507522821426392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.14585459232330322" green="0.22606959939002991" blue="0.30507522821426392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="GKo-11-qnf"/>
+                                    <constraint firstAttribute="height" constant="112" id="OKA-0A-GFk"/>
+                                </constraints>
+                            </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TKa-E2-JIE">
+                                <rect key="frame" x="0.0" y="122" width="414" height="686"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4m5-rw-Kwz"/>
+                        <color key="backgroundColor" red="0.14585459232330322" green="0.22606959939002991" blue="0.30507522821426392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.16083922980000001" green="0.25731754299999998" blue="0.34466096759999998" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yEr-Ti-vwR" firstAttribute="top" secondItem="4m5-rw-Kwz" secondAttribute="top" constant="10" id="BKG-Wl-Jje"/>
+                            <constraint firstItem="4m5-rw-Kwz" firstAttribute="bottom" secondItem="TKa-E2-JIE" secondAttribute="bottom" id="EBi-k1-RP0"/>
+                            <constraint firstItem="TKa-E2-JIE" firstAttribute="top" secondItem="yEr-Ti-vwR" secondAttribute="bottom" id="OSV-HW-8Vl"/>
+                            <constraint firstItem="TKa-E2-JIE" firstAttribute="leading" secondItem="4m5-rw-Kwz" secondAttribute="leading" id="Zgd-sP-hSp"/>
+                            <constraint firstItem="yEr-Ti-vwR" firstAttribute="centerX" secondItem="pzL-Sf-gN2" secondAttribute="centerX" id="cml-Eu-jFQ"/>
+                            <constraint firstItem="TKa-E2-JIE" firstAttribute="centerX" secondItem="pzL-Sf-gN2" secondAttribute="centerX" id="l76-7C-fCf"/>
+                            <constraint firstItem="4m5-rw-Kwz" firstAttribute="trailing" secondItem="TKa-E2-JIE" secondAttribute="trailing" id="tTZ-nO-Cnl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="nyd-ae-9l8"/>
+                    <connections>
+                        <outlet property="mapView" destination="TKa-E2-JIE" id="IQP-UQ-xYI"/>
+                        <outlet property="videoViewContainer" destination="yEr-Ti-vwR" id="l8M-jI-QgR"/>
+                        <segue destination="YTX-Nr-lCf" kind="popoverPresentation" identifier="ResultsSegue" popoverAnchorView="TKa-E2-JIE" id="kdK-cp-ekc">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tdI-rd-AJf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="-719"/>
+        </scene>
         <!--Settings View Controller-->
         <scene sceneID="911-bI-qa7">
             <objects>
                 <viewController storyboardIdentifier="SettingsViewController" id="XUE-K2-yPF" customClass="SettingsViewController" customModule="specTro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jet-L1-gYh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wg7-iA-qlr">
-                                <rect key="frame" x="82.666666666666686" y="10" width="210" height="112"/>
+                                <rect key="frame" x="102" y="10" width="210" height="112"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="112" id="YT6-4e-BO5"/>
@@ -176,7 +237,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chQ-JQ-Pj1" customClass="CustomButton" customModule="specTro" customModuleProvider="target">
-                                <rect key="frame" x="47.666666666666657" y="649" width="280" height="50"/>
+                                <rect key="frame" x="67" y="733" width="280" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="afT-Bx-k8j"/>
                                     <constraint firstAttribute="height" constant="50" id="hdY-bW-Ekd"/>
@@ -198,7 +259,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter a duration in minutes" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="H4G-G0-8f7">
-                                <rect key="frame" x="10" y="198" width="355" height="34"/>
+                                <rect key="frame" x="10" y="198" width="394" height="34"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                             </textField>
