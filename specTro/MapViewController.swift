@@ -14,6 +14,10 @@ var annotations: [[String : Any]] = []
 var receivedLat: String?
 var receivedLon: String?
 var receivedDur: String?
+var PM1: [Int]?
+var PM25: [Int]?
+var PM10: [Int]?
+var lenPM: Int?
 
 var selectedAnnotationLat: String?
 var selectedAnnotationLon: String?

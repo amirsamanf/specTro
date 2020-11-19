@@ -6,16 +6,68 @@
 //
 import UIKit
 import Charts
+import MaterialDesignWidgets
 
 class ResultsViewController: HomeViewController {
      
     static let shared = ResultsViewController()
-    var barChart = BarChartView()
+    static var barChart = BarChartView()
+    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        initializeVideoPlayerWithVideo(viewName: "Results")
+//        player?.play()
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeVideoPlayerWithVideo(viewName: "Results")
         player?.play()
+        
+        // Note: you may need to set the layout contraints for it by yourself
+        // to make it displayed correctly.
+        let segmentedControl = MaterialSegmentedControl(frame: CGRect(x: 0.0, y: 0.0, width: 200.0, height: 30.0))
+        
+        // Configure the view, note that you need to call updateViews in order to apply your cofiguration.
+        segmentedControl.selectorColor = .black
+        segmentedControl.selectorTextColor = .black
+        setSampleSegments(segmentedControl, 18.0)
+        segmentedControl.updateViews()
+        
+        self.view.addSubview(segmentedControl)
+        
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        let horizontalConstraint = NSLayoutConstraint(item: segmentedControl, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0)
+
+        self.view.addConstraints([horizontalConstraint])
+        
+        
+        NSLayoutConstraint.activate([
+            segmentedControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
+            ])
+        
+        
+        
+    }
+
+    /**
+    Create sample segments for the segmented control.
+    - Parameter segmentedControl: The segmented control to put these segments into.
+    - Parameter cornerRadius:     The corner radius to be set to segments and selectors.
+    */
+    private func setSampleSegments(_ segmentedControl: MaterialSegmentedControl, _ cornerRadius: CGFloat) {
+        for i in 0..<2 {
+            // Button background needs to be clear, it will be set to clear in segmented control anyway.
+            if i == 0 {
+                let button = MaterialButton(text: "Histogram", textColor: .gray, bgColor: .clear, cornerRadius: cornerRadius)
+                segmentedControl.segments.append(button)
+            } else {
+                let button = MaterialButton(text: "Time Series", textColor: .gray, bgColor: .clear, cornerRadius: cornerRadius)
+                segmentedControl.segments.append(button)
+            }
+            
+            
+        }
     }
     
     var entries: [BarChartDataEntry] = []
@@ -23,9 +75,11 @@ class ResultsViewController: HomeViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        barChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.width)
-        barChart.center = view.center
-        view.addSubview(barChart)
+        ResultsViewController.barChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.width)
+        ResultsViewController.barChart.center = view.center
+    
+        view.addSubview(ResultsViewController.barChart)
+        
         
         var entries = [BarChartDataEntry]()
         let a = Double(defaults.integer(forKey: "a0_" + selectedAnnotationLat! + selectedAnnotationLon!))
@@ -47,29 +101,199 @@ class ResultsViewController: HomeViewController {
 
         let set = BarChartDataSet(entries: entries, label: "")
         set.drawValuesEnabled = true
-        barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values:labels)
+        ResultsViewController.barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values:labels)
         let data = BarChartData(dataSet: set)
-        barChart.data = data
-        barChart.legend.enabled = false
+        ResultsViewController.barChart.data = data
+        ResultsViewController.barChart.legend.enabled = false
         set.colors = ChartColorTemplates.joyful()
-        barChart.animate(xAxisDuration: 3.0, yAxisDuration: 3.0, easingOption: .easeInOutBounce)
-        barChart.xAxis.labelPosition = XAxis.LabelPosition.bottom
-        barChart.xAxis.labelRotationAngle = 90
+        ResultsViewController.barChart.animate(xAxisDuration: 3.0, yAxisDuration: 3.0, easingOption: .easeInOutBounce)
+        ResultsViewController.barChart.xAxis.labelPosition = XAxis.LabelPosition.bottom
+        ResultsViewController.barChart.xAxis.labelRotationAngle = 90
 //        barChart.xAxis.avoidFirstLastClippingEnabled = true
-        barChart.xAxis.granularity = 1
-        barChart.xAxis.granularityEnabled = true
-        barChart.xAxis.labelCount = 999999
-        barChart.extraBottomOffset = 100
-        barChart.extraTopOffset = 30
+        ResultsViewController.barChart.xAxis.granularity = 1
+        ResultsViewController.barChart.xAxis.granularityEnabled = true
+        ResultsViewController.barChart.xAxis.labelCount = 999999
+        ResultsViewController.barChart.extraBottomOffset = 100
+        ResultsViewController.barChart.extraTopOffset = 30
 //        chartView.xAxis.avoidFirstLastClippingEnabled = true
-        barChart.fitScreen()
+        ResultsViewController.barChart.fitScreen()
 
         
 
 
     }
     
+}
+
+
+open class MaterialSegmentedControl: UIControl {
     
+    /**
+    The same selected segment index as you used in the default segmented control.
+    */
+    public var selectedSegmentIndex = 0
+    
+    /**
+    The view that operates as the selector, we put a generic type here which you can
+    customize to any other view you would like.
+    */
+    open var selector: UIView!
+    
+    /**
+    The view that displays as the segments, you can use any other views that inherits
+    UIControl, namely views that are clickable.
+    */
+    open var segments = [UIButton]()
+  
+    /**
+    The stack view we use to arrange segments.
+    */
+    var stackView: UIStackView!
+    
+    public var borderWidth: CGFloat = 1.5
+    public var textColor: UIColor = .gray
+    
+    /**
+    This defines the selector style that is provided by this post. You may create your
+    own selector style here.
+    */
+    public enum SelectorStyle {
+        case fill
+        case outline
+        case line
+    }
+    public var selectorStyle: SelectorStyle = .line
+    public var selectorColor: UIColor = .gray
+    public var selectorTextColor: UIColor = .white
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func updateViews() {
+        guard segments.count > 0 else { return }
+
+        for idx in 0..<segments.count {
+            // Always set the background to transparent in order to not block the selector.
+            segments[idx].backgroundColor = .clear
+            
+            // Add UITouch event to the button.
+            segments[idx].addTarget(self, action: #selector(buttonTapped(button:)), for: .touchUpInside)
+            
+            // Put a tag on the segment for searching
+            segments[idx].tag = idx
+        }
+
+        // Create stackView that hold all the segments.
+        stackView = UIStackView(arrangedSubviews: segments)
+        stackView.axis = .horizontal
+        stackView.spacing = 10.0
+        (stackView.alignment, stackView.distribution) = (.fill, .fillEqually)
+
+        // Initialize the selector.
+        // We put zero here since the AutoLayout will handle the frame in layoutSubviews().
+        selector = UIView(frame: .zero)
+        if let first = segments.first {
+            selector.setCornerBorder(cornerRadius: first.layer.cornerRadius)
+        }
+
+        // Configure the selector seperately based on the selector style specified.
+        switch selectorStyle {
+        case .fill, .line:
+            selector.backgroundColor = selectorColor
+        case .outline:
+            selector.setCornerBorder(color: selectorColor, borderWidth: 1.5)
+        }
+
+        // Remove all views from the segmented control if there ever exists.
+        subviews.forEach { (view) in
+            view.removeFromSuperview()
+        }
+
+        // Add views to the view hierarchy
+        [selector, stackView].forEach { (view) in
+            guard let view = view else { return }
+            self.addSubview(view)
+            view.translatesAutoresizingMaskIntoConstraints = false
+        }
+
+        // Set the first segment to be selected by default.
+        if let firstBtn = segments.first {
+            buttonTapped(button: firstBtn)
+        }
+        self.layoutSubviews()
+    }
+    
+    override open func layoutSubviews() {
+        super.layoutSubviews()
+           
+        selector.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        switch selectorStyle {
+        case .fill, .outline:
+            selector.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        case .line:
+            selector.heightAnchor.constraint(equalToConstant: 3.0).isActive = true
+        }
+        
+        if let selector = selector, let first = stackView.arrangedSubviews.first {
+            self.addConstraint(NSLayoutConstraint(item: selector, attribute: .width, relatedBy: .equal, toItem: first, attribute: .width, multiplier: 1.0, constant: 0.0))
+        }
+
+        stackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        stackView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        stackView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        self.layoutIfNeeded()
+    }
+    
+    
+    @objc func buttonTapped(button: UIButton) {
+        for (idx, btn) in segments.enumerated() {
+            let image = btn.image(for: .normal)
+            btn.setTitleColor(textColor, for: .normal)
+            btn.setImage(image)
+
+            if btn.tag == button.tag {
+                selectedSegmentIndex = idx
+                btn.setImage(image?.colored(selectorTextColor))
+                btn.setTitleColor(selectorStyle == .line ? textColor : selectorTextColor, for: .normal)
+                moveView(selector, toX: btn.frame.origin.x)
+                
+                if btn.tag == 0 {
+                    ResultsViewController.barChart.isHidden = false
+                } else {
+                    ResultsViewController.barChart.isHidden = true
+                }
+                
+            }
+        }
+        
+
+        sendActions(for: .valueChanged)
+    }
+
+    /**
+     Moves the view to the right position.
+     - Parameter view:       The view to be moved to new position.
+     - Parameter duration:   The duration of the animation.
+     - Parameter completion: The completion handler.
+     - Parameter toView:     The targetd view frame.
+     */
+    open func moveView(_ view: UIView, duration: Double = 0.5, completion: ((Bool) -> Void)? = nil, toX: CGFloat) {
+        view.transform = CGAffineTransform(translationX: view.frame.origin.x, y: 0.0)
+        UIView.animate(withDuration: duration,
+                       delay: 0,
+                       usingSpringWithDamping: 0.8,
+                       initialSpringVelocity: 0.1,
+                       options: .curveEaseOut,
+                       animations: { () -> Void in
+                        view.transform = CGAffineTransform(translationX: toX, y: 0.0)
+        }, completion: completion)
+    }
     
     
 }

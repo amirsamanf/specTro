@@ -137,6 +137,10 @@ class MQTTManager: CocoaMQTTDelegate {
         mqttClient.subscribe("average_3")
         mqttClient.subscribe("average_4")
         mqttClient.subscribe("average_5")
+        mqttClient.subscribe("lenPM")
+        mqttClient.subscribe("PM1")
+        mqttClient.subscribe("PM25")
+        mqttClient.subscribe("PM10")
         self.sendMessage(topic: "request", message: "duration")
 
         MQTTManager.shared.sendMessage(topic: "latitude", message: String(MapViewController.currentCoordinate!.latitude))
@@ -181,6 +185,24 @@ class MQTTManager: CocoaMQTTDelegate {
             defaults.set(Int(messageDecoded!), forKey: "a4_" + String(receivedLat!) + String(receivedLon!))
         } else if message.topic == "average_5" {
             defaults.set(Int(messageDecoded!), forKey: "a5_" + String(receivedLat!) + String(receivedLon!))
+        } else if message.topic == "PM1" {
+            PM1?.append(Int(messageDecoded!)!)
+            if PM1?.count == lenPM {
+                defaults.set(Array<Int>(), forKey: "PM1" + String(receivedLat!) + String(receivedLon!))
+            }
+        } else if message.topic == "PM25" {
+            PM25?.append(Int(messageDecoded!)!)
+            if PM25?.count == lenPM {
+                defaults.set(Array<Int>(), forKey: "PM25" + String(receivedLat!) + String(receivedLon!))
+            }
+        } else if message.topic == "PM10" {
+            PM10?.append(Int(messageDecoded!)!)
+            if PM10?.count == lenPM {
+                defaults.set(Array<Int>(), forKey: "PM10" + String(receivedLat!) + String(receivedLon!))
+                print(PM10!)
+            }
+        } else if message.topic == "lenPM" {
+            lenPM = Int(messageDecoded!)
         }
         
     }
