@@ -35,25 +35,19 @@ class MapViewController: HomeViewController {
         player?.play()
 
         mapView.delegate = self
-        // Set initial location in Vancouver
-        let initialLocation = CLLocation(latitude: 49.2827, longitude: -123.1207)
+        let initLatitude = MapViewController.currentCoordinate?.latitude ?? 49.2827
+        let initLongitude = MapViewController.currentCoordinate?.longitude ?? -123.1207
+        let initialLocation = CLLocation(latitude: initLatitude, longitude: initLongitude)
 
         mapView.centerToLocation(initialLocation)
         
-        createAnnotations(locations: annotations)
+        createAnnotations(locations: defaults.object(forKey: "annotations") as? [[String : Any]] ?? annotations)
 
         configureLocationServices()
         
         
         
     }
-    
-    
-//    // Get all 3 values from Pi
-//    var annotationLocations = [
-//        ["title": "Measurement Length: " + String(10) + " Minutes", "latitude": 49.3200, "longitude": -123.0724]
-//    ]
-    
     
     func configureLocationServices() {
         locationManager.delegate = self
@@ -154,12 +148,7 @@ extension MapViewController: MKMapViewDelegate  {
         let lon = String((selectedAnnotation?.coordinate.longitude)!)
         selectedAnnotationLat = lat
         selectedAnnotationLon = lon
-        
-        
-        
         self.performSegue(withIdentifier: "ResultsSegue", sender: self)
-        
-        
         
     }
 }

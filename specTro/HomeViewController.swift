@@ -172,7 +172,19 @@ class MQTTManager: CocoaMQTTDelegate {
             receivedLon = messageDecoded
         } else if message.topic == "dur" {
             receivedDur = messageDecoded
-            annotations.append(["title": "Measurement Length: " + String(receivedDur!) + " Minutes", "latitude": Double(receivedLat!), "longitude": Double(receivedLon!)])
+            if (defaults.object(forKey: "annotations") as? [[String : Any]] ?? annotations).count == 0 {
+                annotations.append(["title": "Measurement Length: " + String(receivedDur!) + " Minutes", "latitude": Double(receivedLat!)!, "longitude": Double(receivedLon!)!])
+                defaults.set(annotations, forKey: "annotations")
+            } else {
+                annotations = defaults.object(forKey: "annotations") as? [[String : Any]] ?? annotations
+                annotations.append(["title": "Measurement Length: " + String(receivedDur!) + " Minutes", "latitude": Double(receivedLat!)!, "longitude": Double(receivedLon!)!])
+                defaults.set(annotations, forKey: "annotations")
+            }
+            
+                
+//            annotations.append(["title": "Measurement Length: " + String(receivedDur!) + " Minutes", "latitude": Double(receivedLat!), "longitude": Double(receivedLon!)])
+//            defaults.set(annotations, forKey: "annotations")
+            
         } else if message.topic == "average_0" {
             defaults.set(Int(messageDecoded!), forKey: "a0_" + String(receivedLat!) + String(receivedLon!))
         } else if message.topic == "average_1" {
@@ -187,17 +199,8 @@ class MQTTManager: CocoaMQTTDelegate {
             defaults.set(Int(messageDecoded!), forKey: "a5_" + String(receivedLat!) + String(receivedLon!))
         } else if message.topic == "PM1" {
             PM1.append(Int(messageDecoded!)!)
-            print("PM1 MESSAGE:")
-            print(Int(messageDecoded!)!)
-            print("PM1 Size:")
-            print(PM1.count)
             if PM1.count == lenPM {
                 defaults.set(PM1, forKey: "PM1" + String(receivedLat!) + String(receivedLon!))
-                print("ALLLLLLLLL GOOOOOOOOOOOOOOOOD")
-                print("ALLLLLLLLL GOOOOOOOOOOOOOOOOD")
-                print("ALLLLLLLLL GOOOOOOOOOOOOOOOOD")
-                print("ALLLLLLLLL GOOOOOOOOOOOOOOOOD")
-                print("ALLLLLLLLL GOOOOOOOOOOOOOOOOD")
             }
         } else if message.topic == "PM25" {
             PM25.append(Int(messageDecoded!)!)
@@ -211,8 +214,6 @@ class MQTTManager: CocoaMQTTDelegate {
             }
         } else if message.topic == "lenPM" {
             lenPM = Int(messageDecoded!)!
-            print("LEN PM:")
-            print(lenPM)
         }
         
     }

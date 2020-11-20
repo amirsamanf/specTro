@@ -19,6 +19,7 @@ extension String {
 
 class SettingsViewController: HomeViewController, UITextFieldDelegate {
         
+    @IBOutlet var ClearButton: CustomButton!
     @IBOutlet private var DoneButton: CustomButton!
     @IBOutlet var textField: UITextField!
     
@@ -64,6 +65,13 @@ class SettingsViewController: HomeViewController, UITextFieldDelegate {
         
         
     }
+    
+    
+    @IBAction func ClearButtonTapped(_ sender: CustomButton) {
+        ClearButton.shake()
+        defaults.removeObject(forKey: "annotations")
+    }
+    
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

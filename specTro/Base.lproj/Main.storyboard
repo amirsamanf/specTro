@@ -258,11 +258,33 @@
                                 <color key="textColor" red="0.99736553429999997" green="0.99546283479999997" blue="0.28522971270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove all measurements from map" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4MF-CX-CsC">
+                                <rect key="frame" x="10" y="282" width="300" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="PR8-60-Zuz"/>
+                                    <constraint firstAttribute="width" constant="300" id="sTB-Vo-rfw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <color key="textColor" red="0.99736553429999997" green="0.99546283479999997" blue="0.28522971270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter a duration in minutes" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="H4G-G0-8f7">
                                 <rect key="frame" x="10" y="198" width="394" height="34"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjH-y7-k9N" customClass="CustomButton" customModule="specTro" customModuleProvider="target">
+                                <rect key="frame" x="67" y="313" width="280" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="FqV-Pg-vgz"/>
+                                    <constraint firstAttribute="width" constant="280" id="Ylv-KF-RCc"/>
+                                </constraints>
+                                <state key="normal" title="Clear Measurements"/>
+                                <connections>
+                                    <action selector="ClearButtonTapped:" destination="XUE-K2-yPF" eventType="touchUpInside" id="c1L-Ap-oLK"/>
+                                    <action selector="stopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VUk-4u-jHq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZFg-n0-c2v"/>
                         <color key="backgroundColor" red="0.14585459232330322" green="0.22606959939002991" blue="0.30507522821426392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -275,12 +297,17 @@
                             <constraint firstItem="ZFg-n0-c2v" firstAttribute="bottom" secondItem="chQ-JQ-Pj1" secondAttribute="bottom" constant="25" id="Mtf-5T-sOe"/>
                             <constraint firstItem="ZFg-n0-c2v" firstAttribute="trailing" secondItem="H4G-G0-8f7" secondAttribute="trailing" constant="10" id="QNV-Hd-hGZ"/>
                             <constraint firstItem="c8F-qg-ke6" firstAttribute="top" secondItem="Wg7-iA-qlr" secondAttribute="bottom" constant="50" id="XOm-Gv-ioT"/>
+                            <constraint firstItem="sjH-y7-k9N" firstAttribute="centerX" secondItem="Jet-L1-gYh" secondAttribute="centerX" id="fC8-Rc-xlH"/>
                             <constraint firstItem="chQ-JQ-Pj1" firstAttribute="centerX" secondItem="Jet-L1-gYh" secondAttribute="centerX" id="hYZ-cL-gjb"/>
+                            <constraint firstItem="4MF-CX-CsC" firstAttribute="leading" secondItem="ZFg-n0-c2v" secondAttribute="leading" constant="10" id="ioX-WQ-7i8"/>
+                            <constraint firstItem="sjH-y7-k9N" firstAttribute="top" secondItem="4MF-CX-CsC" secondAttribute="bottom" constant="10" id="kJ7-OD-b2O"/>
                             <constraint firstItem="Wg7-iA-qlr" firstAttribute="top" secondItem="ZFg-n0-c2v" secondAttribute="top" constant="10" id="uUh-lS-Lcu"/>
                             <constraint firstItem="H4G-G0-8f7" firstAttribute="top" secondItem="c8F-qg-ke6" secondAttribute="bottom" constant="5" id="uhX-SZ-pd0"/>
+                            <constraint firstItem="4MF-CX-CsC" firstAttribute="top" secondItem="H4G-G0-8f7" secondAttribute="bottom" constant="50" id="wZM-dR-K1p"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ClearButton" destination="sjH-y7-k9N" id="HUq-F7-7WT"/>
                         <outlet property="DoneButton" destination="chQ-JQ-Pj1" id="Sh7-lS-tAj"/>
                         <outlet property="textField" destination="H4G-G0-8f7" id="Fot-hg-dgl"/>
                         <outlet property="videoViewContainer" destination="Wg7-iA-qlr" id="h1l-15-yOk"/>

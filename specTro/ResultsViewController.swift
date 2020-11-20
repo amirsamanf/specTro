@@ -77,13 +77,6 @@ class ResultsViewController: HomeViewController {
         setUpBarChart()
         setUpLineChart()
         
-
-        
-        
-        
-        
- 
-
     }
     
     func setUpLineChart() {
@@ -93,8 +86,8 @@ class ResultsViewController: HomeViewController {
         
         var lineEntries = [ChartDataEntry]()
         let PM1 = defaults.object(forKey: "PM1" + selectedAnnotationLat! + selectedAnnotationLon!) as? [Int] ?? [Int]()
-        let times: [Float] = Array(stride(from: 0.0, to: Float(PM1.count / 2) + 0.25, by: 0.25))
-//        let times = Array(0...PM1.count)
+//        let times: [Float] = Array(stride(from: 0.0, to: Float(PM1.count / 2) + 0.25, by: 0.25))
+        let times = Array(0...PM1.count)
         
         
         for i in 0..<PM1.count {
@@ -155,7 +148,7 @@ class ResultsViewController: HomeViewController {
 //        barChart.xAxis.avoidFirstLastClippingEnabled = true
         ResultsViewController.barChart.xAxis.granularity = 1
         ResultsViewController.barChart.xAxis.granularityEnabled = true
-        ResultsViewController.barChart.xAxis.labelCount = 999999
+//        ResultsViewController.barChart.xAxis.labelCount = 999999
         ResultsViewController.barChart.extraBottomOffset = 100
         ResultsViewController.barChart.extraTopOffset = 30
 //        chartView.xAxis.avoidFirstLastClippingEnabled = true
@@ -309,7 +302,7 @@ open class MaterialSegmentedControl: UIControl {
                 } else {
                     ResultsViewController.barChart.isHidden = true
                     ResultsViewController.lineChart.isHidden = false
-                    ResultsViewController.lineChart.animate(xAxisDuration: 3.0, yAxisDuration: 3.0, easingOption: .easeInElastic)
+                    ResultsViewController.lineChart.animate(xAxisDuration: 3.0, yAxisDuration: 3.0, easingOption: .easeInSine)
                     
                 }
                 
