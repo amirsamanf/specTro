@@ -186,23 +186,33 @@ class MQTTManager: CocoaMQTTDelegate {
         } else if message.topic == "average_5" {
             defaults.set(Int(messageDecoded!), forKey: "a5_" + String(receivedLat!) + String(receivedLon!))
         } else if message.topic == "PM1" {
-            PM1?.append(Int(messageDecoded!)!)
-            if PM1?.count == lenPM {
-                defaults.set(Array<Int>(), forKey: "PM1" + String(receivedLat!) + String(receivedLon!))
+            PM1.append(Int(messageDecoded!)!)
+            print("PM1 MESSAGE:")
+            print(Int(messageDecoded!)!)
+            print("PM1 Size:")
+            print(PM1.count)
+            if PM1.count == lenPM {
+                defaults.set(PM1, forKey: "PM1" + String(receivedLat!) + String(receivedLon!))
+                print("ALLLLLLLLL GOOOOOOOOOOOOOOOOD")
+                print("ALLLLLLLLL GOOOOOOOOOOOOOOOOD")
+                print("ALLLLLLLLL GOOOOOOOOOOOOOOOOD")
+                print("ALLLLLLLLL GOOOOOOOOOOOOOOOOD")
+                print("ALLLLLLLLL GOOOOOOOOOOOOOOOOD")
             }
         } else if message.topic == "PM25" {
-            PM25?.append(Int(messageDecoded!)!)
-            if PM25?.count == lenPM {
-                defaults.set(Array<Int>(), forKey: "PM25" + String(receivedLat!) + String(receivedLon!))
+            PM25.append(Int(messageDecoded!)!)
+            if PM25.count == lenPM {
+                defaults.set(PM25, forKey: "PM25" + String(receivedLat!) + String(receivedLon!))
             }
         } else if message.topic == "PM10" {
-            PM10?.append(Int(messageDecoded!)!)
-            if PM10?.count == lenPM {
-                defaults.set(Array<Int>(), forKey: "PM10" + String(receivedLat!) + String(receivedLon!))
-                print(PM10!)
+            PM10.append(Int(messageDecoded!)!)
+            if PM10.count == lenPM {
+                defaults.set(PM10, forKey: "PM10" + String(receivedLat!) + String(receivedLon!))
             }
         } else if message.topic == "lenPM" {
-            lenPM = Int(messageDecoded!)
+            lenPM = Int(messageDecoded!)!
+            print("LEN PM:")
+            print(lenPM)
         }
         
     }

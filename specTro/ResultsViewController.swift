@@ -12,6 +12,7 @@ class ResultsViewController: HomeViewController {
      
     static let shared = ResultsViewController()
     static var barChart = BarChartView()
+    static var lineChart = LineChartView()
     
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
@@ -24,7 +25,6 @@ class ResultsViewController: HomeViewController {
         initializeVideoPlayerWithVideo(viewName: "Results")
         player?.play()
         
-        // Note: you may need to set the layout contraints for it by yourself
         // to make it displayed correctly.
         let segmentedControl = MaterialSegmentedControl(frame: CGRect(x: 0.0, y: 0.0, width: 200.0, height: 30.0))
         
@@ -69,18 +69,61 @@ class ResultsViewController: HomeViewController {
             
         }
     }
-    
+    var lineEntries: [ChartDataEntry] = []
     var entries: [BarChartDataEntry] = []
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        setUpBarChart()
+        setUpLineChart()
         
+
+        
+        
+        
+        
+ 
+
+    }
+    
+    func setUpLineChart() {
+        ResultsViewController.lineChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.width)
+        ResultsViewController.lineChart.center = view.center
+        view.addSubview(ResultsViewController.lineChart)
+        
+        var lineEntries = [ChartDataEntry]()
+        let PM1 = defaults.object(forKey: "PM1" + selectedAnnotationLat! + selectedAnnotationLon!) as? [Int] ?? [Int]()
+        let times: [Float] = Array(stride(from: 0.0, to: Float(PM1.count / 2) + 0.25, by: 0.25))
+//        let times = Array(0...PM1.count)
+        
+        
+        for i in 0..<PM1.count {
+            let dataPoint = ChartDataEntry(x: Double(times[i]), y: Double(PM1[i]))
+            lineEntries.append(dataPoint)
+        }
+        
+        let chartDataSet = LineChartDataSet(entries: lineEntries, label: "")
+        let chartData = LineChartData()
+        chartData.addDataSet(chartDataSet)
+//        chartData.setDrawValues(true)
+        chartDataSet.colors = [ChartColorTemplates.joyful()[0]]
+        chartDataSet.drawCirclesEnabled = false
+        chartDataSet.drawCircleHoleEnabled = false
+        chartDataSet.drawFilledEnabled = false
+        chartDataSet.drawValuesEnabled = false
+        ResultsViewController.lineChart.legend.enabled = false
+        ResultsViewController.lineChart.data = chartData
+        ResultsViewController.lineChart.fitScreen()
+        ResultsViewController.lineChart.extraBottomOffset = 100
+        ResultsViewController.lineChart.extraTopOffset = 30
+//        ResultsViewController.lineChart.animate(xAxisDuration: 3.0, yAxisDuration: 3.0, easingOption: .easeInOutBounce)
+
+    }
+    
+    func setUpBarChart() {
         ResultsViewController.barChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.width)
         ResultsViewController.barChart.center = view.center
-    
         view.addSubview(ResultsViewController.barChart)
-        
-        
         var entries = [BarChartDataEntry]()
         let a = Double(defaults.integer(forKey: "a0_" + selectedAnnotationLat! + selectedAnnotationLon!))
         let b = Double(defaults.integer(forKey: "a1_" + selectedAnnotationLat! + selectedAnnotationLon!))
@@ -117,10 +160,6 @@ class ResultsViewController: HomeViewController {
         ResultsViewController.barChart.extraTopOffset = 30
 //        chartView.xAxis.avoidFirstLastClippingEnabled = true
         ResultsViewController.barChart.fitScreen()
-
-        
-
-
     }
     
 }
@@ -265,8 +304,13 @@ open class MaterialSegmentedControl: UIControl {
                 
                 if btn.tag == 0 {
                     ResultsViewController.barChart.isHidden = false
+                    ResultsViewController.lineChart.isHidden = true
+                    ResultsViewController.barChart.animate(xAxisDuration: 3.0, yAxisDuration: 3.0, easingOption: .easeInOutBounce)
                 } else {
                     ResultsViewController.barChart.isHidden = true
+                    ResultsViewController.lineChart.isHidden = false
+                    ResultsViewController.lineChart.animate(xAxisDuration: 3.0, yAxisDuration: 3.0, easingOption: .easeInElastic)
+                    
                 }
                 
             }
